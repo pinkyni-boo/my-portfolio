@@ -171,6 +171,7 @@ export default function App() {
 
       <Navbar
         name={portfolio.hero.name}
+        signature={portfolio.ui.brandSignature}
         links={portfolio.ui.navLinks}
         language={language}
         onLanguageChange={setLanguage}

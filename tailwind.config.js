@@ -7,6 +7,7 @@ export default {
       fontFamily: {
         sans: ["Inter", "Arial", "sans-serif"],
         display: ['"Plus Jakarta Sans"', "Inter", "sans-serif"],
+        signature: ['"Allura"', "cursive"],
       },
       keyframes: {
         "soft-float": {

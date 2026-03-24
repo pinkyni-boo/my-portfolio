@@ -17,6 +17,7 @@ interface ControlsUi {
 
 interface NavbarProps {
   name: string;
+  signature: string;
   links: NavLinkItem[];
   language: Language;
   onLanguageChange: (language: Language) => void;
@@ -31,6 +32,7 @@ function isExternalLink(href: string): boolean {
 
 export function Navbar({
   name,
+  signature,
   links,
   language,
   onLanguageChange,
@@ -45,9 +47,14 @@ export function Navbar({
       <div className="mx-auto flex max-w-[1640px] items-center justify-between gap-3 px-4 py-4 lg:px-8">
         <a
           href="#top"
-          className="shrink-0 select-none caret-transparent font-display text-2xl font-bold text-slate-900 transition hover:text-teal-600 dark:text-slate-100 dark:hover:text-teal-300"
+          className="shrink-0 select-none caret-transparent text-slate-900 transition hover:text-teal-600 dark:text-slate-100 dark:hover:text-teal-300"
         >
-          {name}
+          <span className="inline-flex items-end gap-2">
+            <span className="font-display text-2xl font-bold">{name}</span>
+            <span className="font-signature text-[1.45rem] font-normal leading-none text-teal-700/90 dark:text-teal-300/90">
+              {signature}
+            </span>
+          </span>
         </a>
 
         <div className="flex min-w-0 items-center gap-3">

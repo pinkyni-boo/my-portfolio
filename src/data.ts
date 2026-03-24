@@ -67,6 +67,7 @@ export interface PortfolioUi {
     light: string;
     dark: string;
   };
+  brandSignature: string;
   footer: string;
 }
 
@@ -307,6 +308,7 @@ export const PORTFOLIO_DATA_BY_LANGUAGE: Record<Language, PortfolioData> = {
         light: "Sáng",
         dark: "Tối",
       },
+      brandSignature: "niorravu",
       footer: "© 2026 Vũ Thị Ngọc Thảo",
     },
   },
@@ -395,6 +397,7 @@ export const PORTFOLIO_DATA_BY_LANGUAGE: Record<Language, PortfolioData> = {
         light: "Light",
         dark: "Dark",
       },
+      brandSignature: "niorravu",
       footer: "© 2026 Vu Thi Ngoc Thao",
     },
   },
