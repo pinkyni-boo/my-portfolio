@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: #fff1f2;
+  color: #0f172a;
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+html.dark body {
+  background: #020617;
+  color: #e2e8f0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+  caret-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+a::selection,
+button::selection {
+  background: transparent;
+}
+
+.sakura-layer {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.sakura-petal {
+  position: absolute;
+  top: -12%;
+  left: var(--left);
+  width: var(--size);
+  height: calc(var(--size) * 0.78);
+  border-radius: 55% 45% 65% 35%;
+  background: radial-gradient(
+    circle at 28% 28%,
+    rgba(255, 255, 255, 0.95) 6%,
+    rgba(252, 190, 214, 0.85) 56%,
+    rgba(235, 151, 187, 0.68) 100%
+  );
+  opacity: var(--opacity, 0.72);
+  filter: blur(var(--blur, 0)) drop-shadow(0 2px 4px rgba(235, 150, 180, 0.22));
+  animation: sakura-fall var(--duration) linear infinite;
+  animation-delay: var(--delay);
+}
+
+@keyframes sakura-fall {
+  0% {
+    transform: translate3d(0, -10vh, 0) rotate(0deg);
+  }
+
+  45% {
+    transform: translate3d(calc(var(--drift) * 0.65), 45vh, 0) rotate(150deg);
+  }
+
+  100% {
+    transform: translate3d(var(--drift), 112vh, 0) rotate(320deg);
+  }
+}
