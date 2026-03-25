@@ -31,9 +31,11 @@ export interface AboutData {
 export interface PortfolioUi {
   navLinks: Array<{ label: string; href: string }>;
   hero: {
-    primaryCta: string;
+    cvButtons: Array<{
+      label: string;
+      link: string;
+    }>;
     secondaryCta: string;
-    cvLink: string;
   };
   sections: {
     about: string;
@@ -67,6 +69,7 @@ export interface PortfolioUi {
     light: string;
     dark: string;
   };
+  brandSignature: string;
   footer: string;
 }
 
@@ -94,7 +97,11 @@ export interface PortfolioData {
 
 const EMAIL_WEBMAIL_LINK =
   "https://mail.google.com/mail/?view=cm&fs=1&to=niorravucontact@gmail.com&su=Li%C3%AAn%20h%E1%BB%87%20portfolio";
-const CV_LINK = "/VuThiNgocThao_FrontendDeveloper_CV.pdf";
+const CV_LINK_VI = "/VuThiNgocThao_Frontend_Developer_Intern_CV.pdf";
+const CV_LINK_FS_VI = "/VuThiNgocThao_Fullstack_Developer_Intern_CV.pdf";
+const CV_LINK_EN = "/VuThiNgocThao_FrontendDeveloper_CV.pdf";
+const CV_LINK_FS = "/VuThiNgocThao_FullstackDeveloperIntern_CV.pdf";
+const CV_LINK_FE = "/VuThiNgocThao_FrontendDeveloperIntern_CV.pdf";
 
 const baseContacts: ContactItem[] = [
   { platform: "GitHub", link: "https://github.com/pinkyni-boo", icon: "Github" },
@@ -125,7 +132,7 @@ const projectsVi: ProjectItem[] = [
     ],
     liveUrl: "https://spa-gules.vercel.app/",
     repoUrl: "https://github.com/pinkyni-boo/spa",
-    image: "",
+    image: "/project-spa.png",
   },
   {
     repoName: "auction",
@@ -143,7 +150,7 @@ const projectsVi: ProjectItem[] = [
     ],
     liveUrl: "",
     repoUrl: "https://github.com/thnkthuhigh/auction",
-    image: "",
+    image: "/project-auction.png",
   },
   {
     repoName: "healthcare-clinic-system",
@@ -161,7 +168,7 @@ const projectsVi: ProjectItem[] = [
     ],
     liveUrl: "",
     repoUrl: "https://github.com/thnkthuhigh/healthcare-clinic-system",
-    image: "",
+    image: "/project-healthcare.png",
   },
 ];
 
@@ -181,7 +188,7 @@ const projectsEn: ProjectItem[] = [
     ],
     liveUrl: "https://spa-gules.vercel.app/",
     repoUrl: "https://github.com/pinkyni-boo/spa",
-    image: "",
+    image: "/project-spa.png",
   },
   {
     repoName: "auction",
@@ -199,7 +206,7 @@ const projectsEn: ProjectItem[] = [
     ],
     liveUrl: "",
     repoUrl: "https://github.com/thnkthuhigh/auction",
-    image: "",
+    image: "/project-auction.png",
   },
   {
     repoName: "healthcare-clinic-system",
@@ -217,7 +224,7 @@ const projectsEn: ProjectItem[] = [
     ],
     liveUrl: "",
     repoUrl: "https://github.com/thnkthuhigh/healthcare-clinic-system",
-    image: "",
+    image: "/project-healthcare.png",
   },
 ];
 
@@ -265,13 +272,15 @@ export const PORTFOLIO_DATA_BY_LANGUAGE: Record<Language, PortfolioData> = {
         { label: "Về Tôi", href: "#about" },
         { label: "Kỹ Năng", href: "#skills" },
         { label: "Dự Án", href: "#projects" },
-        { label: "CV", href: CV_LINK },
+        { label: "CV", href: CV_LINK_VI },
         { label: "Liên Hệ", href: "#contact" },
       ],
       hero: {
-        primaryCta: "Xem CV",
+        cvButtons: [
+          { label: "CV Frontend Developer", link: CV_LINK_VI },
+          { label: "CV FullStack Developer", link: CV_LINK_FS_VI },
+        ],
         secondaryCta: "Xem dự án",
-        cvLink: CV_LINK,
       },
       sections: {
         about: "Về Tôi",
@@ -307,6 +316,7 @@ export const PORTFOLIO_DATA_BY_LANGUAGE: Record<Language, PortfolioData> = {
         light: "Sáng",
         dark: "Tối",
       },
+      brandSignature: "niorravu",
       footer: "© 2026 Vũ Thị Ngọc Thảo",
     },
   },
@@ -353,13 +363,15 @@ export const PORTFOLIO_DATA_BY_LANGUAGE: Record<Language, PortfolioData> = {
         { label: "About", href: "#about" },
         { label: "Skills", href: "#skills" },
         { label: "Projects", href: "#projects" },
-        { label: "CV", href: CV_LINK },
+        { label: "CV", href: CV_LINK_EN },
         { label: "Contact", href: "#contact" },
       ],
       hero: {
-        primaryCta: "View CV",
+        cvButtons: [
+          { label: "CV Frontend Developer", link: CV_LINK_FE },
+          { label: "CV Fullstack Developer", link: CV_LINK_FS },
+        ],
         secondaryCta: "View Projects",
-        cvLink: CV_LINK,
       },
       sections: {
         about: "About",
@@ -395,9 +407,10 @@ export const PORTFOLIO_DATA_BY_LANGUAGE: Record<Language, PortfolioData> = {
         light: "Light",
         dark: "Dark",
       },
+      brandSignature: "niorravu",
       footer: "© 2026 Vu Thi Ngoc Thao",
     },
   },
 };
 
-export const PORTFOLIO_DATA = PORTFOLIO_DATA_BY_LANGUAGE.vi;
+export const PORTFOLIO_DATA = PORTFOLIO_DATA_BY_LANGUAGE.en;
