@@ -45,10 +45,10 @@ function buildOpenGraphImage(owner: string, repo: string, updatedAt: string): st
 
 function getStoredLanguage(): Language {
   if (typeof window === "undefined") {
-    return "vi";
+    return "en";
   }
   const value = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
-  return value === "en" ? "en" : "vi";
+  return value === "vi" ? "vi" : "en";
 }
 
 function getStoredTheme(): ThemeMode {
@@ -116,12 +116,9 @@ export default function App() {
               }
 
               const hasPresetImage = project.image.trim().length > 0;
-              const useRawScreenshot = hasPresetImage && project.image.includes("raw.githubusercontent.com");
-              const image = useRawScreenshot
+              const image = hasPresetImage
                 ? project.image
-                : hasPresetImage
-                  ? buildOpenGraphImage(repo.owner.login, repo.name, repo.updated_at)
-                  : "";
+                : buildOpenGraphImage(repo.owner.login, repo.name, repo.updated_at);
 
               return {
                 ...project,
@@ -180,7 +177,7 @@ export default function App() {
         controls={portfolio.ui.controls}
       />
 
-      <main className="mx-auto max-w-[1640px] space-y-6 px-4 py-5 lg:px-8 lg:py-7">
+      <main className="mx-auto max-w-[1640px] space-y-5 px-3 py-4 sm:space-y-6 sm:px-4 sm:py-5 lg:px-8 lg:py-7">
         <HeroSection hero={portfolio.hero} ui={portfolio.ui.hero} />
         <AboutSection
           about={portfolio.about}
@@ -214,7 +211,7 @@ export default function App() {
         />
       </main>
 
-      <footer className="mx-auto max-w-[1640px] px-5 pb-8 lg:px-8">
+      <footer className="mx-auto max-w-[1640px] px-3 pb-7 sm:px-5 sm:pb-8 lg:px-8">
         <div className="rounded-3xl border border-rose-100 bg-white/86 px-5 py-4 text-center shadow-sm dark:border-slate-800 dark:bg-slate-900/80">
           <div className="mb-2 flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-slate-600 dark:text-slate-300">
             {portfolio.hero.contacts.map((contact) => (

@@ -19,14 +19,14 @@ export function ProjectsSection({ projects, title, subtitle, ctaUi }: ProjectsSe
   return (
     <motion.section
       id="projects"
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.52, ease: "easeOut" }}
+      viewport={{ once: true, amount: 0.08 }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       className="space-y-4"
     >
-      <div className="rounded-3xl border border-rose-100 bg-white/88 p-5 shadow-sm backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/80 md:p-7">
-        <h2 className="font-display text-4xl font-bold text-slate-900 dark:text-slate-100">{title}</h2>
+      <div className="rounded-3xl border border-rose-100 bg-white/88 p-4 shadow-sm backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/80 sm:p-5 md:p-7">
+        <h2 className="font-display text-3xl font-bold text-slate-900 dark:text-slate-100 sm:text-4xl">{title}</h2>
         {subtitle ? <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{subtitle}</p> : null}
       </div>
 
@@ -34,10 +34,10 @@ export function ProjectsSection({ projects, title, subtitle, ctaUi }: ProjectsSe
         {projects.map((project, index) => (
           <motion.article
             key={project.repoName}
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.36, delay: index * 0.05 }}
+            viewport={{ once: true, amount: 0.12 }}
+            transition={{ duration: 0.22, delay: Math.min(index, 2) * 0.03 }}
             className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-rose-100 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-slate-800 dark:bg-slate-900"
           >
             <span
@@ -51,7 +51,13 @@ export function ProjectsSection({ projects, title, subtitle, ctaUi }: ProjectsSe
             </span>
 
             {project.image ? (
-              <img src={project.image} alt={project.title} className="h-48 w-full object-cover" loading="lazy" />
+              <img
+                src={project.image}
+                alt={project.title}
+                className="h-48 w-full object-cover"
+                loading={index === 0 ? "eager" : "lazy"}
+                decoding="async"
+              />
             ) : (
               <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-white via-rose-50/55 to-white">
                 <div className="absolute inset-x-0 top-0 h-10 bg-white/45 dark:bg-slate-900/30" />
@@ -61,8 +67,8 @@ export function ProjectsSection({ projects, title, subtitle, ctaUi }: ProjectsSe
               </div>
             )}
 
-            <div className="flex h-full flex-1 flex-col gap-3 p-5">
-              <h3 className="font-display text-3xl font-bold text-slate-900 dark:text-slate-100">{project.title}</h3>
+            <div className="flex h-full flex-1 flex-col gap-3 p-4 sm:p-5">
+              <h3 className="font-display text-2xl font-bold text-slate-900 dark:text-slate-100 sm:text-3xl">{project.title}</h3>
 
               <div className="flex flex-wrap gap-2">
                 {project.techStack.map((tech) => (
@@ -80,24 +86,24 @@ export function ProjectsSection({ projects, title, subtitle, ctaUi }: ProjectsSe
                 ))}
               </ul>
 
-              <div className="mt-auto flex items-center gap-2 pt-3">
+              <div className="mt-auto flex flex-wrap items-center gap-2 pt-3">
                 {project.liveUrl ? (
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex min-w-[96px] select-none justify-center rounded-full bg-teal-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-teal-700"
+                    className="inline-flex min-w-[108px] flex-1 select-none justify-center rounded-full bg-teal-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-teal-700 sm:flex-none"
                   >
                     {ctaUi.live}
                   </a>
                 ) : (
-                  <span className="inline-flex min-w-[96px]" aria-hidden="true"></span>
+                  <span className="hidden min-w-[108px] sm:inline-flex" aria-hidden="true"></span>
                 )}
                 <a
                   href={project.repoUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex min-w-[96px] select-none justify-center rounded-full border border-teal-600 px-4 py-2 text-sm font-semibold text-teal-700 transition hover:bg-teal-50 dark:text-teal-300 dark:hover:bg-teal-900/20"
+                  className="inline-flex min-w-[108px] flex-1 select-none justify-center rounded-full border border-teal-600 px-4 py-2 text-sm font-semibold text-teal-700 transition hover:bg-teal-50 dark:text-teal-300 dark:hover:bg-teal-900/20 sm:flex-none"
                 >
                   {ctaUi.repo}
                 </a>
