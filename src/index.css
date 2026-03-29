@@ -11,14 +11,14 @@ html {
 body {
   margin: 0;
   font-family: "Inter", Arial, sans-serif;
-  background: #fff1f2;
-  color: #0f172a;
+  background: #f7f2f9;
+  color: #201726;
   transition: background-color 220ms ease, color 220ms ease;
 }
 
 html.dark body {
-  background: #020617;
-  color: #e2e8f0;
+  background: #0d0d10;
+  color: #e8d9df;
 }
 
 a {
@@ -38,7 +38,7 @@ button::selection {
   background: transparent;
 }
 
-.sakura-layer {
+.star-layer {
   pointer-events: none;
   position: fixed;
   inset: 0;
@@ -46,35 +46,49 @@ button::selection {
   overflow: hidden;
 }
 
-.sakura-petal {
+.star-drop {
   position: absolute;
-  top: -12%;
+  top: -16%;
   left: var(--left);
-  width: var(--size);
-  height: calc(var(--size) * 0.78);
-  border-radius: 55% 45% 65% 35%;
-  background: radial-gradient(
-    circle at 28% 28%,
-    rgba(255, 255, 255, 0.95) 6%,
-    rgba(252, 190, 214, 0.85) 56%,
-    rgba(235, 151, 187, 0.68) 100%
-  );
+  font-size: var(--size);
+  line-height: 1;
+  color: var(--tone);
   opacity: var(--opacity, 0.72);
-  filter: blur(var(--blur, 0)) drop-shadow(0 2px 4px rgba(235, 150, 180, 0.22));
-  animation: sakura-fall var(--duration) linear infinite;
-  animation-delay: var(--delay);
+  text-shadow:
+    0 0 8px rgba(248, 217, 229, 0.35),
+    0 0 14px rgba(217, 182, 90, 0.28);
+  filter: drop-shadow(0 1px 3px rgba(10, 8, 22, 0.48));
+  transform-origin: center;
+  animation:
+    star-fall var(--duration) linear infinite,
+    star-twinkle var(--twinkle) ease-in-out infinite alternate;
+  animation-delay:
+    var(--delay),
+    calc(var(--delay) * 0.25);
 }
 
-@keyframes sakura-fall {
+@keyframes star-fall {
   0% {
-    transform: translate3d(0, -10vh, 0) rotate(0deg);
+    transform: translate3d(0, -8vh, 0) rotate(0deg) scale(0.9);
   }
 
-  45% {
-    transform: translate3d(calc(var(--drift) * 0.65), 45vh, 0) rotate(150deg);
+  55% {
+    transform: translate3d(calc(var(--drift) * 0.65), 48vh, 0) rotate(160deg) scale(1);
   }
 
   100% {
-    transform: translate3d(var(--drift), 112vh, 0) rotate(320deg);
+    transform: translate3d(var(--drift), 114vh, 0) rotate(340deg) scale(0.92);
+  }
+}
+
+@keyframes star-twinkle {
+  0% {
+    opacity: calc(var(--opacity) * 0.54);
+    filter: drop-shadow(0 1px 2px rgba(10, 8, 22, 0.34));
+  }
+
+  100% {
+    opacity: min(0.98, calc(var(--opacity) + 0.22));
+    filter: drop-shadow(0 1px 4px rgba(10, 8, 22, 0.58));
   }
 }

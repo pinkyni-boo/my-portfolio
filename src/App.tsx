@@ -29,7 +29,7 @@ interface GitHubRepoResponse {
 }
 
 const LANGUAGE_STORAGE_KEY = "portfolio-language";
-const THEME_STORAGE_KEY = "portfolio-theme";
+const THEME_STORAGE_KEY = "portfolio-theme-v2";
 
 function normalizeHomepage(homepage: string | null | undefined, fallback: string): string {
   if (!homepage || homepage.trim().length === 0) {
@@ -53,10 +53,10 @@ function getStoredLanguage(): Language {
 
 function getStoredTheme(): ThemeMode {
   if (typeof window === "undefined") {
-    return "light";
+    return "dark";
   }
   const value = window.localStorage.getItem(THEME_STORAGE_KEY);
-  return value === "dark" ? "dark" : "light";
+  return value === "light" ? "light" : "dark";
 }
 
 export default function App() {
@@ -145,21 +145,28 @@ export default function App() {
   return (
     <div
       className={`relative min-h-screen transition-colors duration-300 ${
-        isDark ? "bg-slate-950 text-slate-100" : "bg-rose-50 text-slate-900"
+        isDark ? "bg-[#0d0d10] text-[#f8e7ee]" : "bg-[#f7f2f9] text-[#201726]"
       }`}
     >
       <SakuraRain />
       <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+        <div
+          className={`absolute inset-0 ${
+            isDark
+              ? "bg-[radial-gradient(circle_at_80%_8%,rgba(217,182,90,0.1),transparent_30%),radial-gradient(circle_at_14%_12%,rgba(244,191,210,0.14),transparent_36%),linear-gradient(180deg,#0d0d10_0%,#111218_56%,#0d0d10_100%)]"
+              : "bg-[radial-gradient(circle_at_84%_10%,rgba(217,182,90,0.2),transparent_30%),radial-gradient(circle_at_14%_12%,rgba(244,191,210,0.24),transparent_38%),linear-gradient(180deg,#fffcfe_0%,#f7eff8_58%,#f8f2e8_100%)]"
+          }`}
+        />
         <motion.div
           className={`absolute -left-20 top-20 h-72 w-72 rounded-full blur-3xl ${
-            isDark ? "bg-fuchsia-900/35" : "bg-rose-200/45"
+            isDark ? "bg-[#f4bfd2]/20" : "bg-[#f4bfd2]/28"
           }`}
           animate={{ x: [0, 16, -10, 0], y: [0, -12, 10, 0] }}
           transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
         />
         <motion.div
           className={`absolute -right-24 top-40 h-80 w-80 rounded-full blur-3xl ${
-            isDark ? "bg-teal-900/25" : "bg-teal-100/30"
+            isDark ? "bg-[#d9b65a]/22" : "bg-[#d9b65a]/26"
           }`}
           animate={{ x: [0, -20, 8, 0], y: [0, 18, -8, 0] }}
           transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
@@ -212,21 +219,21 @@ export default function App() {
       </main>
 
       <footer className="mx-auto max-w-[1640px] px-3 pb-7 sm:px-5 sm:pb-8 lg:px-8">
-        <div className="rounded-3xl border border-rose-100 bg-white/86 px-5 py-4 text-center shadow-sm dark:border-slate-800 dark:bg-slate-900/80">
-          <div className="mb-2 flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <div className="rounded-3xl border border-[#e6dbe2] bg-white/84 px-5 py-4 text-center shadow-sm dark:border-[#2a2b33] dark:bg-[#111218]/88">
+          <div className="mb-2 flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-[#5b4f60] dark:text-[#e8d9df]">
             {portfolio.hero.contacts.map((contact) => (
               <a
                 key={`footer-${contact.platform}`}
                 href={contact.link}
                 target={contact.link.startsWith("http") ? "_blank" : undefined}
                 rel={contact.link.startsWith("http") ? "noreferrer" : undefined}
-                className="select-none caret-transparent transition hover:text-teal-700 dark:hover:text-teal-300"
+                className="select-none caret-transparent transition hover:text-[#9f7925] dark:hover:text-[#f2d48a]"
               >
                 {contact.platform}
               </a>
             ))}
           </div>
-          <p className="text-xs text-slate-500 dark:text-slate-400">{portfolio.ui.footer}</p>
+          <p className="text-xs text-[#8d7f88] dark:text-[#a996a0]">{portfolio.ui.footer}</p>
         </div>
       </footer>
     </div>
