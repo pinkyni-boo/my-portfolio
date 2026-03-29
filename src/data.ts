@@ -11,7 +11,7 @@ export interface ContactItem {
 export interface ProjectItem {
   repoName: string;
   title: string;
-  projectLabel: "Team" | "CÃ¡ nhÃ¢n" | "Personal";
+  projectLabel: "Team" | "Cá nhân" | "Personal";
   description: string;
   techStack: string[];
   highlights: string[];
@@ -119,15 +119,15 @@ const projectsVi: ProjectItem[] = [
   {
     repoName: "spa",
     title: "Spa Management System",
-    projectLabel: "CÃ¡ nhÃ¢n",
+    projectLabel: "Cá nhân",
     description:
-      "Dá»± Ã¡n cÃ¡ nhÃ¢n xÃ¢y dá»±ng há»‡ thá»‘ng quáº£n lÃ½ spa, táº­p trung vÃ o tráº£i nghiá»‡m Ä‘áº·t lá»‹ch trá»±c quan vÃ  tá»‘i Æ°u luá»“ng thao tÃ¡c ngÆ°á»i dÃ¹ng.",
+      "Dự án cá nhân xây dựng hệ thống quản lý spa, tập trung vào trải nghiệm đặt lịch trực quan và tối ưu luồng thao tác người dùng.",
     techStack: ["React", "Node.js", "Express.js", "MongoDB", "Ant Design", "Joi"],
     highlights: [
-      "Thiáº¿t káº¿ vÃ  phÃ¡t triá»ƒn tÃ­nh nÄƒng Ä‘áº·t lá»‹ch kÃ©o tháº£ (drag-and-drop) báº±ng React Big Calendar.",
-      "XÃ¢y dá»±ng giao diá»‡n responsive, Ä‘áº£m báº£o hiá»ƒn thá»‹ chÃ­nh xÃ¡c theo thiáº¿t káº¿ (pixel-perfect).",
-      "TÃ­ch há»£p RESTful API vÃ  triá»ƒn khai xÃ¡c thá»±c ngÆ°á»i dÃ¹ng báº±ng JWT.",
-      "Thiáº¿t káº¿ vÃ  xá»­ lÃ½ logic Ä‘áº·t lá»‹ch nháº±m Ä‘áº£m báº£o tÃ­nh nháº¥t quÃ¡n vÃ  háº¡n cháº¿ xung Ä‘á»™t booking.",
+      "Thiết kế và phát triển tính năng đặt lịch kéo thả (drag-and-drop) bằng React Big Calendar.",
+      "Xây dựng giao diện responsive, đảm bảo hiển thị chính xác theo thiết kế (pixel-perfect).",
+      "Tích hợp RESTful API và triển khai xác thực người dùng bằng JWT.",
+      "Thiết kế và xử lý logic đặt lịch nhằm đảm bảo tính nhất quán và hạn chế xung đột booking.",
     ],
     liveUrl: "https://spa-gules.vercel.app/",
     repoUrl: "https://github.com/pinkyni-boo/spa",
@@ -138,14 +138,14 @@ const projectsVi: ProjectItem[] = [
     title: "Auction Platform",
     projectLabel: "Team",
     description:
-      "Dá»± Ã¡n nhÃ³m xÃ¢y dá»±ng ná»n táº£ng Ä‘áº¥u giÃ¡, trong Ä‘Ã³ mÃ¬nh Ä‘áº£m nháº­n vai trÃ² Business Analyst káº¿t há»£p phÃ¡t triá»ƒn há»‡ thá»‘ng quáº£n trá»‹.",
+      "Dự án nhóm xây dựng nền tảng đấu giá, trong đó mình đảm nhận vai trò Business Analyst kết hợp phát triển hệ thống quản trị.",
     techStack: ["React", "TypeScript", "Node.js", "Express.js", "MongoDB", "JWT"],
     highlights: [
-      "PhÃ¢n tÃ­ch yÃªu cáº§u nghiá»‡p vá»¥ vÃ  xÃ¢y dá»±ng user flow, admin flow.",
-      "Chuyá»ƒn Ä‘á»•i yÃªu cáº§u nghiá»‡p vá»¥ thÃ nh cáº¥u trÃºc chá»©c nÄƒng vÃ  luá»“ng mÃ n hÃ¬nh cá»¥ thá»ƒ.",
-      "Triá»ƒn khai chá»©c nÄƒng quáº£n trá»‹ gá»“m xÃ¡c thá»±c ngÆ°á»i dÃ¹ng vÃ  phÃ¢n quyá»n (role-based access).",
-      "Äáº£m báº£o tÃ­nh nháº¥t quÃ¡n giá»¯a luá»“ng nghiá»‡p vá»¥ vÃ  tráº£i nghiá»‡m giao diá»‡n trong toÃ n há»‡ thá»‘ng.",
-      "Tham gia phÃ¡t triá»ƒn fullstack vá»›i trá»ng tÃ¢m lÃ  phÃ­a admin vÃ  luá»“ng xá»­ lÃ½ há»‡ thá»‘ng.",
+      "Phân tích yêu cầu nghiệp vụ và xây dựng user flow, admin flow.",
+      "Chuyển đổi yêu cầu nghiệp vụ thành cấu trúc chức năng và luồng màn hình cụ thể.",
+      "Triển khai chức năng quản trị gồm xác thực người dùng và phân quyền (role-based access).",
+      "Đảm bảo tính nhất quán giữa luồng nghiệp vụ và trải nghiệm giao diện trong toàn hệ thống.",
+      "Tham gia phát triển fullstack với trọng tâm là phía admin và luồng xử lý hệ thống.",
     ],
     liveUrl: "",
     repoUrl: "https://github.com/thnkthuhigh/auction",
@@ -156,14 +156,14 @@ const projectsVi: ProjectItem[] = [
     title: "Healthcare System",
     projectLabel: "Team",
     description:
-      "Dá»± Ã¡n nhÃ³m xÃ¢y dá»±ng há»‡ thá»‘ng quáº£n lÃ½ phÃ²ng khÃ¡m dá»±a trÃªn cÃ¡c quy trÃ¬nh váº­n hÃ nh thá»±c táº¿.",
+      "Dự án nhóm xây dựng hệ thống quản lý phòng khám dựa trên các quy trình vận hành thực tế.",
     techStack: ["React", "TypeScript", "Spring Boot", "PostgreSQL", "Tailwind CSS"],
     highlights: [
-      "Äáº£m nháº­n vai trÃ² Business Analyst, phÃ¢n tÃ­ch luá»“ng tiáº¿p nháº­n bá»‡nh nhÃ¢n, Ä‘áº·t lá»‹ch vÃ  Ä‘iá»u phá»‘i khÃ¡m.",
-      "XÃ¢y dá»±ng cáº¥u trÃºc há»‡ thá»‘ng vÃ  luá»“ng xá»­ lÃ½ dá»±a trÃªn yÃªu cáº§u thá»±c táº¿ cá»§a phÃ²ng khÃ¡m.",
-      "PhÃ¡t triá»ƒn dashboard quáº£n trá»‹ cho lá»… tÃ¢n vÃ  quáº£n lÃ½ theo workflow váº­n hÃ nh.",
-      "TÃ­ch há»£p RESTful API báº±ng Axios vÃ  triá»ƒn khai phÃ¢n quyá»n truy cáº­p (RBAC) báº±ng JWT.",
-      "Tham gia phÃ¡t triá»ƒn fullstack vá»›i trá»ng tÃ¢m lÃ  phÃ­a admin vÃ  luá»“ng váº­n hÃ nh há»‡ thá»‘ng.",
+      "Đảm nhận vai trò Business Analyst, phân tích luồng tiếp nhận bệnh nhân, đặt lịch và điều phối khám.",
+      "Xây dựng cấu trúc hệ thống và luồng xử lý dựa trên yêu cầu thực tế của phòng khám.",
+      "Phát triển dashboard quản trị cho lễ tân và quản lý theo workflow vận hành.",
+      "Tích hợp RESTful API bằng Axios và triển khai phân quyền truy cập (RBAC) bằng JWT.",
+      "Tham gia phát triển fullstack với trọng tâm là phía admin và luồng vận hành hệ thống.",
     ],
     liveUrl: "",
     repoUrl: "https://github.com/thnkthuhigh/healthcare-clinic-system",
@@ -233,64 +233,64 @@ export const PORTFOLIO_DATA_BY_LANGUAGE: Record<Language, PortfolioData> = {
       username: "pinkyni-boo",
     },
     hero: {
-      name: "VÅ© Thá»‹ Ngá»c Tháº£o",
+      name: "Vũ Thị Ngọc Thảo",
       role: "Frontend Developer Intern",
-      tagline: "Vá»›i Ä‘á»‹nh hÆ°á»›ng rÃµ rÃ ng trong viá»‡c xÃ¢y dá»±ng giao diá»‡n web.",
+      tagline: "Với định hướng rõ ràng trong việc xây dựng giao diện web.",
       description:
-        "MÃ¬nh yÃªu thÃ­ch viá»‡c thiáº¿t káº¿ vÃ  phÃ¡t triá»ƒn web, Ä‘áº·c biá»‡t lÃ  nhá»¯ng giao diá»‡n rÃµ rÃ ng, dá»… dÃ¹ng vÃ  bÃ¡m sÃ¡t nhu cáº§u thá»±c táº¿.\n\nTrong quÃ¡ trÃ¬nh lÃ m dá»± Ã¡n, mÃ¬nh khÃ´ng chá»‰ code frontend mÃ  cÃ²n tham gia phÃ¢n tÃ­ch nghiá»‡p vá»¥ (BA), xÃ¢y dá»±ng luá»“ng há»‡ thá»‘ng vÃ  phÃ¡t triá»ƒn cÃ¡c chá»©c nÄƒng fullstack phÃ­a admin.\n\nMÃ¬nh cÃ³ thá»ƒ lÃ m frontend, hiá»ƒu backend á»Ÿ má»©c Ä‘á»§ dÃ¹ng, vÃ  sáºµn sÃ ng há»c thÃªm Ä‘á»ƒ Ä‘Ã¡p á»©ng yÃªu cáº§u thá»±c táº¿ cá»§a sáº£n pháº©m.",
+        "Mình yêu thích việc thiết kế và phát triển web, đặc biệt là những giao diện rõ ràng, dễ dùng và bám sát nhu cầu thực tế.\n\nTrong quá trình làm dự án, mình không chỉ code frontend mà còn tham gia phân tích nghiệp vụ (BA), xây dựng luồng hệ thống và phát triển các chức năng fullstack phía admin.\n\nMình có thể làm frontend, hiểu backend ở mức đủ dùng, và sẵn sàng học thêm để đáp ứng yêu cầu thực tế của sản phẩm.",
       avatar: "https://avatars.githubusercontent.com/u/215128142?v=4",
       contacts: baseContacts,
     },
     about: {
-      heading: "MÃ¬nh Æ°u tiÃªn hiá»ƒu há»‡ thá»‘ng trÆ°á»›c khi xÃ¢y dá»±ng giao diá»‡n.",
+      heading: "Mình ưu tiên hiểu hệ thống trước khi xây dựng giao diện.",
       mindset:
-        "Trong cÃ¡c dá»± Ã¡n, mÃ¬nh thÆ°á»ng báº¯t Ä‘áº§u tá»« viá»‡c phÃ¢n tÃ­ch luá»“ng nghiá»‡p vá»¥, xÃ¡c Ä‘á»‹nh ngÆ°á»i dÃ¹ng vÃ  cÃ¡ch há»‡ thá»‘ng váº­n hÃ nh.\n\nTá»« Ä‘Ã³, mÃ¬nh chuyá»ƒn cÃ¡c yÃªu cáº§u thÃ nh UI flow rÃµ rÃ ng, chia thÃ nh cÃ¡c mÃ n hÃ¬nh vÃ  component Ä‘á»ƒ dá»… phÃ¡t triá»ƒn vÃ  báº£o trÃ¬.\n\nMÃ¬nh Ä‘Ã£ tá»«ng Ä‘áº£m nháº­n vai trÃ² Business Analyst trong dá»± Ã¡n nhÃ³m, Ä‘á»“ng thá»i trá»±c tiáº¿p xÃ¢y dá»±ng cÃ¡c chá»©c nÄƒng theo luá»“ng Ä‘Ã£ thiáº¿t káº¿.\n\nMá»¥c tiÃªu cá»§a mÃ¬nh lÃ  táº¡o ra nhá»¯ng giao diá»‡n khÃ´ng chá»‰ Ä‘áº¹p mÃ  cÃ²n dá»… hiá»ƒu, dá»… dÃ¹ng vÃ  phÃ¹ há»£p vá»›i cÃ¡ch há»‡ thá»‘ng hoáº¡t Ä‘á»™ng thá»±c táº¿.",
+        "Trong các dự án, mình thường bắt đầu từ việc phân tích luồng nghiệp vụ, xác định người dùng và cách hệ thống vận hành.\n\nTừ đó, mình chuyển các yêu cầu thành UI flow rõ ràng, chia thành các màn hình và component để dễ phát triển và bảo trì.\n\nMình đã từng đảm nhận vai trò Business Analyst trong dự án nhóm, đồng thời trực tiếp xây dựng các chức năng theo luồng đã thiết kế.\n\nMục tiêu của mình là tạo ra những giao diện không chỉ đẹp mà còn dễ hiểu, dễ dùng và phù hợp với cách hệ thống hoạt động thực tế.",
       readmeIntro: [
-        "MÃ¬nh lÃ m viá»‡c theo hÆ°á»›ng Æ°u tiÃªn há»‡ thá»‘ng vÃ  luá»“ng nghiá»‡p vá»¥ trÆ°á»›c, sau Ä‘Ã³ má»›i tá»‘i Æ°u UI detail Ä‘á»ƒ tráº£i nghiá»‡m Ä‘á»“ng nháº¥t.",
-        "Má»—i mÃ n hÃ¬nh Ä‘á»u cáº§n rÃµ má»¥c tiÃªu sá»­ dá»¥ng, thao tÃ¡c dá»… hiá»ƒu vÃ  kháº£ nÄƒng má»Ÿ rá»™ng khi nghiá»‡p vá»¥ tÄƒng dáº§n.",
-        "Äiá»ƒm mÃ¬nh theo Ä‘uá»•i lÃ  giao diá»‡n cÃ³ tháº©m má»¹, nhÆ°ng váº«n pháº£i bÃ¡m sÃ¡t workflow tháº­t cá»§a Ä‘á»™i váº­n hÃ nh.",
+        "Mình làm việc theo hướng ưu tiên hệ thống và luồng nghiệp vụ trước, sau đó mới tối ưu UI detail để trải nghiệm đồng nhất.",
+        "Mỗi màn hình đều cần rõ mục tiêu sử dụng, thao tác dễ hiểu và khả năng mở rộng khi nghiệp vụ tăng dần.",
+        "Điểm mình theo đuổi là giao diện có thẩm mỹ, nhưng vẫn phải bám sát workflow thật của đội vận hành.",
       ],
       strengths: [
-        "CÃ³ kinh nghiá»‡m Ä‘áº£m nháº­n vai trÃ² Business Analyst vÃ  phÃ¡t triá»ƒn há»‡ thá»‘ng",
-        "Hiá»ƒu vÃ  xÃ¢y dá»±ng Ä‘Æ°á»£c luá»“ng nghiá»‡p vá»¥",
-        "PhÃ¡t triá»ƒn frontend vá»›i React, xÃ¢y dá»±ng giao diá»‡n responsive, dá»… sá»­ dá»¥ng",
-        "CÃ³ thá»ƒ lÃ m fullstack á»Ÿ má»©c phá»¥c vá»¥ há»‡ thá»‘ng (API, auth, database)",
-        "Chá»§ Ä‘á»™ng há»c thÃªm cÃ´ng nghá»‡ má»›i khi cáº§n Ä‘á»ƒ Ä‘Ã¡p á»©ng yÃªu cáº§u dá»± Ã¡n",
+        "Có kinh nghiệm đảm nhận vai trò Business Analyst và phát triển hệ thống",
+        "Hiểu và xây dựng được luồng nghiệp vụ",
+        "Phát triển frontend với React, xây dựng giao diện responsive, dễ sử dụng",
+        "Có thể làm fullstack ở mức phục vụ hệ thống (API, auth, database)",
+        "Chủ động học thêm công nghệ mới khi cần để đáp ứng yêu cầu dự án",
       ],
       orientation: [
-        "Äá»‹nh hÆ°á»›ng phÃ¡t triá»ƒn theo Frontend, táº­p trung vÃ o cÃ¡c sáº£n pháº©m thá»±c táº¿",
-        "Æ¯u tiÃªn mÃ´i trÆ°á»ng cÃ³ há»‡ thá»‘ng rÃµ rÃ ng vÃ  cÃ³ thá»ƒ há»c há»i thÃªm vá» sáº£n pháº©m",
-        "Muá»‘n nÃ¢ng cao kháº£ nÄƒng xÃ¢y dá»±ng UI gáº¯n vá»›i nghiá»‡p vá»¥ vÃ  há»‡ thá»‘ng",
-        "Sáºµn sÃ ng há»c thÃªm cÃ´ng nghá»‡ má»›i Ä‘á»ƒ phÃ¡t triá»ƒn báº£n thÃ¢n trong cÃ´ng viá»‡c",
+        "Định hướng phát triển theo Frontend, tập trung vào các sản phẩm thực tế",
+        "Ưu tiên môi trường có hệ thống rõ ràng và có thể học hỏi thêm về sản phẩm",
+        "Muốn nâng cao khả năng xây dựng UI gắn với nghiệp vụ và hệ thống",
+        "Sẵn sàng học thêm công nghệ mới để phát triển bản thân trong công việc",
       ],
     },
     skills: baseSkills,
     projects: projectsVi,
     ui: {
       navLinks: [
-        { label: "Vá» TÃ´i", href: "#about" },
-        { label: "Ká»¹ NÄƒng", href: "#skills" },
-        { label: "Dá»± Ãn", href: "#projects" },
-        { label: "LiÃªn Há»‡", href: "#contact" },
+        { label: "Về Tôi", href: "#about" },
+        { label: "Kỹ Năng", href: "#skills" },
+        { label: "Dự Án", href: "#projects" },
+        { label: "Liên Hệ", href: "#contact" },
       ],
       hero: {
         cvButtons: [
           { label: "CV Frontend Developer", link: CV_LINK_VI },
           { label: "CV FullStack Developer", link: CV_LINK_FS_VI },
         ],
-        secondaryCta: "Xem dá»± Ã¡n",
+        secondaryCta: "Xem dự án",
       },
       sections: {
-        about: "Vá» TÃ´i",
-        skills: "Ká»¹ NÄƒng",
+        about: "Về Tôi",
+        skills: "Kỹ Năng",
         skillsSubtitle:
-          "Táº­p trung vÃ o nhÃ³m cÃ´ng nghá»‡ mÃ¬nh dÃ¹ng trá»±c tiáº¿p trong dá»± Ã¡n thá»±c táº¿, Æ°u tiÃªn Ä‘á»™ rÃµ rÃ ng vÃ  kháº£ nÄƒng triá»ƒn khai.",
-        projects: "Dá»± Ãn",
+          "Tập trung vào nhóm công nghệ mình dùng trực tiếp trong dự án thực tế, ưu tiên độ rõ ràng và khả năng triển khai.",
+        projects: "Dự Án",
         projectsSubtitle:
-          "Bao gá»“m dá»± Ã¡n Team vÃ  dá»± Ã¡n CÃ¡ nhÃ¢n Ä‘á»ƒ thá»ƒ hiá»‡n kháº£ nÄƒng phá»‘i há»£p nhÃ³m vÃ  nÄƒng lá»±c tá»± triá»ƒn khai.",
-        strengths: "Äiá»ƒm Máº¡nh",
-        orientation: "Äá»‹nh HÆ°á»›ng",
-        readme: "TÆ° duy lÃ m viá»‡c",
+          "Bao gồm dự án Team và dự án Cá nhân để thể hiện khả năng phối hợp nhóm và năng lực tự triển khai.",
+        strengths: "Điểm Mạnh",
+        orientation: "Định Hướng",
+        readme: "Tư duy làm việc",
       },
       skillTitles: {
         frontend: "Frontend",
@@ -302,20 +302,20 @@ export const PORTFOLIO_DATA_BY_LANGUAGE: Record<Language, PortfolioData> = {
         repo: "Repo Link",
       },
       contact: {
-        title: "Sáºµn sÃ ng cho cÆ¡ há»™i má»›i.",
-        button: "LiÃªn há»‡",
+        title: "Sẵn sàng cho cơ hội mới.",
+        button: "Liên hệ",
         link: EMAIL_WEBMAIL_LINK,
       },
       controls: {
-        language: "NgÃ´n ngá»¯",
+        language: "Ngôn ngữ",
         vi: "VI",
         en: "EN",
-        theme: "Giao diá»‡n",
-        light: "SÃ¡ng",
-        dark: "Tá»‘i",
+        theme: "Giao diện",
+        light: "Sáng",
+        dark: "Tối",
       },
       brandSignature: "niorravu",
-      footer: "Â© 2026 VÅ© Thá»‹ Ngá»c Tháº£o",
+      footer: "© 2026 Vũ Thị Ngọc Thảo",
     },
   },
   en: {
@@ -405,12 +405,9 @@ export const PORTFOLIO_DATA_BY_LANGUAGE: Record<Language, PortfolioData> = {
         dark: "Dark",
       },
       brandSignature: "niorravu",
-      footer: "© Vu Thi Ngoc Thao",
+      footer: "© 2026 Vu Thi Ngoc Thao",
     },
   },
 };
 
 export const PORTFOLIO_DATA = PORTFOLIO_DATA_BY_LANGUAGE.en;
-
-
-
