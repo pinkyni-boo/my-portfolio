@@ -15,6 +15,12 @@ export interface ProjectItem {
   description: string;
   techStack: string[];
   highlights: string[];
+  demoAccount?: {
+    label: string;
+    username: string;
+    password: string;
+    loginUrl: string;
+  };
   liveUrl: string;
   repoUrl: string;
   image: string;
@@ -129,6 +135,12 @@ const projectsVi: ProjectItem[] = [
       "Tích hợp RESTful API và triển khai xác thực người dùng bằng JWT.",
       "Thiết kế và xử lý logic đặt lịch nhằm đảm bảo tính nhất quán và hạn chế xung đột booking.",
     ],
+    demoAccount: {
+      label: "Tài khoản admin để HR test nhanh",
+      username: "d",
+      password: "12",
+      loginUrl: "https://spa-gules.vercel.app/login",
+    },
     liveUrl: "https://spa-gules.vercel.app/",
     repoUrl: "https://github.com/pinkyni-boo/spa",
     image: "/project-spa.png",
@@ -185,6 +197,12 @@ const projectsEn: ProjectItem[] = [
       "Integrated RESTful APIs and implemented JWT-based authentication.",
       "Designed booking logic to keep data consistent and reduce schedule conflicts.",
     ],
+    demoAccount: {
+      label: "Admin test account for HR",
+      username: "d",
+      password: "12",
+      loginUrl: "https://spa-gules.vercel.app/login",
+    },
     liveUrl: "https://spa-gules.vercel.app/",
     repoUrl: "https://github.com/pinkyni-boo/spa",
     image: "/project-spa.png",

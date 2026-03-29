@@ -86,6 +86,23 @@ export function ProjectsSection({ projects, title, subtitle, ctaUi }: ProjectsSe
                 ))}
               </ul>
 
+              {project.demoAccount ? (
+                <div className="rounded-xl border border-[#ebd8a9] bg-[#fff9eb] px-3 py-2.5 dark:border-[#5b4a26] dark:bg-[#2a2317]/70">
+                  <p className="text-xs font-semibold text-[#8f6b1e] dark:text-[#f2d48a]">{project.demoAccount.label}</p>
+                  <p className="mt-1 text-xs text-[#5b4f60] dark:text-[#e8d9df]">
+                    User: <strong>{project.demoAccount.username}</strong> | Password: <strong>{project.demoAccount.password}</strong>
+                  </p>
+                  <a
+                    href={project.demoAccount.loginUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-1 inline-flex text-xs font-medium text-[#8f4e68] transition hover:text-[#6e334a] dark:text-[#f7d7e3] dark:hover:text-[#fff0f6]"
+                  >
+                    Open admin login
+                  </a>
+                </div>
+              ) : null}
+
               <div className="mt-auto flex flex-wrap items-center gap-2 pt-3">
                 {project.liveUrl ? (
                   <a
