@@ -136,7 +136,7 @@ const projectsVi: ProjectItem[] = [
       "Thiết kế và xử lý logic đặt lịch nhằm đảm bảo tính nhất quán và hạn chế xung đột booking.",
     ],
     demoAccount: {
-      label: "Tài khoản admin để HR test nhanh",
+      label: "Tài khoản admin để test nhanh",
       username: "d",
       password: "12",
       loginUrl: "https://spa-gules.vercel.app/login",
