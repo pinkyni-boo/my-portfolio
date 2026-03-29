@@ -57,8 +57,8 @@ export function TechBadge({ label, variant = "rose", small = false }: TechBadgeP
   const textClass = small ? "text-xs font-semibold" : "text-sm font-medium";
   const colorClass =
     variant === "teal"
-      ? "border-teal-100 bg-teal-50 text-teal-700 dark:border-teal-800 dark:bg-teal-900/30 dark:text-teal-200"
-      : "border-rose-100 bg-rose-50 text-rose-700 dark:border-fuchsia-800 dark:bg-fuchsia-900/25 dark:text-fuchsia-200";
+      ? "border-[#ebd8a9] bg-[#fff9eb] text-[#9f7925] dark:border-[#5b4a26] dark:bg-[#2a2317]/70 dark:text-[#f2d48a]"
+      : "border-[#e4cad6] bg-[#fff4f9] text-[#8f4e68] dark:border-[#5a3344] dark:bg-[#2a1d23]/70 dark:text-[#f7d7e3]";
 
   return (
     <span className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 ${textClass} ${colorClass}`}>

@@ -1,13 +1,18 @@
 import type { CSSProperties } from "react";
 
-const petals = Array.from({ length: 28 }, (_, index) => {
-  const left = (index * 3.73 + 5) % 100;
-  const delay = (index * 0.58) % 14;
-  const duration = 10.8 + (index % 8) * 1.35;
-  const drift = ((index % 7) - 3) * 18;
-  const size = 8 + (index % 5) * 2.4;
-  const opacity = 0.56 + (index % 5) * 0.07;
-  const blur = index % 6 === 0 ? 0.7 : 0;
+const STAR_GLYPHS = ["✦", "✧", "⋆"];
+const STAR_TONES = ["#f8d9e5", "#d9b65a", "#fff6d1"];
+
+const stars = Array.from({ length: 34 }, (_, index) => {
+  const left = (index * 5.3 + 3) % 100;
+  const delay = (index * 0.66) % 20;
+  const duration = 9.8 + (index % 9) * 1.25;
+  const drift = ((index % 7) - 3) * 20;
+  const size = 10 + (index % 4) * 2.4;
+  const opacity = 0.42 + (index % 5) * 0.1;
+  const twinkle = 1.8 + (index % 4) * 0.5;
+  const glyph = STAR_GLYPHS[index % STAR_GLYPHS.length];
+  const tone = STAR_TONES[index % STAR_TONES.length];
 
   return {
     id: index,
@@ -17,29 +22,34 @@ const petals = Array.from({ length: 28 }, (_, index) => {
     drift,
     size,
     opacity,
-    blur,
+    twinkle,
+    glyph,
+    tone,
   };
 });
 
 export function SakuraRain() {
   return (
-    <div className="sakura-layer" aria-hidden="true">
-      {petals.map((petal) => (
+    <div className="star-layer" aria-hidden="true">
+      {stars.map((star) => (
         <span
-          key={petal.id}
-          className="sakura-petal"
+          key={star.id}
+          className="star-drop"
           style={
             {
-              "--left": `${petal.left}%`,
-              "--delay": `${petal.delay}s`,
-              "--duration": `${petal.duration}s`,
-              "--drift": `${petal.drift}px`,
-              "--size": `${petal.size}px`,
-              "--opacity": `${petal.opacity}`,
-              "--blur": `${petal.blur}px`,
+              "--left": `${star.left}%`,
+              "--delay": `${star.delay}s`,
+              "--duration": `${star.duration}s`,
+              "--drift": `${star.drift}px`,
+              "--size": `${star.size}px`,
+              "--opacity": `${star.opacity}`,
+              "--twinkle": `${star.twinkle}s`,
+              "--tone": star.tone,
             } as CSSProperties
           }
-        />
+        >
+          {star.glyph}
+        </span>
       ))}
     </div>
   );
